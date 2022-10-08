@@ -13,7 +13,6 @@ RUN         apt update && apt upgrade -y \
     			libfontconfig libicu63 icu-devtools libunwind8 libssl-dev sqlite3 libsqlite3-dev libmariadbclient-dev libduktape203 locales ffmpeg gnupg2 apt-transport-https software-properties-common ca-certificates tzdata \
     			liblua5.3 libz-dev rapidjson-dev \
 				tigervnc-standalone-server tigervnc-common \
-				tasksel \
 				xfce4 xfce4-goodies \
 				&& update-locale lang=en_US.UTF-8 \
 				&& dpkg-reconfigure --frontend noninteractive locales \
@@ -22,6 +21,8 @@ RUN         apt update && apt upgrade -y \
 RUN 		mkdir -p /opt/websockify \
     			&& curl -SL https://github.com/novnc/websockify/archive/refs/tags/v$WEBSOCKIFY_VERSION.tar.gz \
     			| tar xzC /opt/websockify
+
+RUN			echo "allowed_users = anybody" | tee -a /etc/X11/Xwrapper.config
 
 RUN 		python -m pip install 'numpy<1.17' redis simplejson jwcrypto
 
