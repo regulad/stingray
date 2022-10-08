@@ -1,4 +1,4 @@
-name: build oses
+name: Build Stingray Desktops
 on:
   workflow_dispatch:
   schedule:
