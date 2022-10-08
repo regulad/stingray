@@ -29,9 +29,5 @@ USER        container
 ENV         USER=container HOME=/home/container
 WORKDIR     /home/container
 
-COPY 		./xstartup /home/container/.vnc/xstartup
-RUN			chmod u+x  /home/container/.vnc/xstartup \
-				&& chmod 777 /home/container/.vnc/xstartup
-
 COPY        ./entrypoint.sh /entrypoint.sh
 CMD         [ "/bin/bash", "/entrypoint.sh" ]
