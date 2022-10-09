@@ -16,7 +16,7 @@ RUN         apt update && apt upgrade -y \
     			liblua5.3 libz-dev rapidjson-dev \
 				tigervnc-standalone-server tigervnc-common \
 				&& wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
-				&& apt install ./google-chrome-stable_current_amd64.deb \
+				&& apt install -y ./google-chrome-stable_current_amd64.deb \
 				&& update-locale lang=en_US.UTF-8 \
 				&& dpkg-reconfigure --frontend noninteractive locales \
 				&& useradd -m -d /home/container -s /bin/bash -u 988 container
