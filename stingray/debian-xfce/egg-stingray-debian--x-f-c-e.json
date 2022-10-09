@@ -1,0 +1,72 @@
+{
+    "_comment": "DO NOT EDIT: FILE GENERATED AUTOMATICALLY BY PTERODACTYL PANEL - PTERODACTYL.IO",
+    "meta": {
+        "version": "PTDL_v2",
+        "update_url": null
+    },
+    "exported_at": "2022-10-08T20:37:59-04:00",
+    "name": "Stingray Debian-XFCE",
+    "author": "regulad@outlook.com",
+    "description": null,
+    "features": null,
+    "docker_images": {
+        "Debian XFCE": "ghcr.io\/regulad\/stingray:debian-xfce"
+    },
+    "file_denylist": [],
+    "startup": ".\/stingray.py --distro debian --desktop xfce",
+    "config": {
+        "files": "{}",
+        "startup": "{\r\n    \"done\": \"Ready for connection!\"\r\n}",
+        "logs": "{}",
+        "stop": "^C"
+    },
+    "scripts": {
+        "installation": {
+            "script": "#!\/bin\/ash\r\n# Stingray Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\nPROJECT=stingray\r\n\r\ncd \/mnt\/server\r\ncurl -o runtime-bash.sh https:\/\/raw.githubusercontent.com\/regulad\/stingray\/master\/stingray.py\r\nchmod +x stingray.py\r\n\r\nmkdir .vnc\r\ncd .\/.vnc\r\ncurl -o xstartup https:\/\/raw.githubusercontent.com\/regulad\/stingray\/master\/stingray\/debian-xfce\/xstartup\r\nchmod +x xstartup",
+            "container": "ghcr.io\/pterodactyl\/installers:alpine",
+            "entrypoint": "ash"
+        }
+    },
+    "variables": [
+        {
+            "name": "VNC Password",
+            "description": "The password to be used for connecting to the VNC server. The user is always \"container\".",
+            "env_variable": "VNC_PASSWORD",
+            "default_value": "password",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:32",
+            "field_type": "text"
+        },
+        {
+            "name": "Websockify Version",
+            "description": "The version of websockify to use.",
+            "env_variable": "WEBSOCKIFY_VERSION",
+            "default_value": "0.10.0",
+            "user_viewable": false,
+            "user_editable": false,
+            "rules": "required|string|max:20",
+            "field_type": "text"
+        },
+        {
+            "name": "VNC Desktop Width",
+            "description": "The width of the VNC desktop.",
+            "env_variable": "VNC_WIDTH",
+            "default_value": "1366",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20",
+            "field_type": "text"
+        },
+        {
+            "name": "VNC Desktop Height",
+            "description": "The height of the VNC desktop.",
+            "env_variable": "VNC_HEIGHT",
+            "default_value": "768",
+            "user_viewable": true,
+            "user_editable": true,
+            "rules": "required|string|max:20",
+            "field_type": "text"
+        }
+    ]
+}
