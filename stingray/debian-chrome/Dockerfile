@@ -15,7 +15,8 @@ RUN         apt update && apt upgrade -y \
     			libfontconfig libicu63 icu-devtools libunwind8 libssl-dev sqlite3 libsqlite3-dev libmariadbclient-dev libduktape203 locales ffmpeg gnupg2 apt-transport-https software-properties-common ca-certificates tzdata \
     			liblua5.3 libz-dev rapidjson-dev \
 				tigervnc-standalone-server tigervnc-common \
-				xfce4 xfce4-goodies \
+				&& wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb \
+				&& apt install ./google-chrome-stable_current_amd64.deb \
 				&& update-locale lang=en_US.UTF-8 \
 				&& dpkg-reconfigure --frontend noninteractive locales \
 				&& useradd -m -d /home/container -s /bin/bash -u 988 container

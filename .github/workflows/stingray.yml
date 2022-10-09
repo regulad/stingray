@@ -19,6 +19,7 @@ jobs:
           - debian-xfce
           - debian-gnome
           - debian-firefox
+          - debian-chrome
     steps:
       - uses: actions/checkout@v2
       - uses: docker/setup-qemu-action@v1
