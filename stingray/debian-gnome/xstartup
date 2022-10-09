@@ -14,5 +14,4 @@ xsetroot -solid grey
 vncconfig -iconic &
 
 gnome-session --builtin --session=gnome-flashback-metacity --disable-acceleration-check --debug &
-nautilus &
-gnome-terminal &              
+gnome-panel &          
