@@ -6,4 +6,4 @@ unset DBUS_SESSION_BUS_ADDRESS
 [ -x /etc/vnc/xstartup ] && exec /etc/vnc/xstartup
 [ -r $HOME/.Xresources ] && xrdb $HOME/.Xresources
 xsetroot -solid grey
-google-chrome &
+google-chrome --no-sandbox &
