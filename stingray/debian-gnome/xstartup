@@ -14,4 +14,5 @@ xsetroot -solid grey
 vncconfig -iconic &
 
 gnome-session --builtin --session=gnome-flashback-metacity --disable-acceleration-check --debug &
-gnome-panel &          
+gnome-panel &
+metacity & # Doesn't start with gnome session. I don't know why.
