@@ -16,7 +16,7 @@ RUN         apt update && apt upgrade -y \
 				xfce4 xfce4-goodies \
 				&& update-locale lang=en_US.UTF-8 \
 				&& dpkg-reconfigure --frontend noninteractive locales \
-				&& useradd -m -d /home/container -s /bin/bash container
+				&& useradd -m -d /home/container -s /bin/bash -u 988 container
 
 RUN 		mkdir -p /opt/websockify \
     			&& curl -SL https://github.com/novnc/websockify/archive/refs/tags/v$WEBSOCKIFY_VERSION.tar.gz \
