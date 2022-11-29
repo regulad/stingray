@@ -22,7 +22,7 @@
     },
     "scripts": {
         "installation": {
-            "script": "#!\/bin\/ash\r\n# Stingray Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\nPROJECT=stingray\r\n\r\ncd \/mnt\/server\r\ncurl -o runtime-bash.sh https:\/\/raw.githubusercontent.com\/regulad\/stingray\/master\/stingray.py\r\nchmod +x stingray.py\r\n\r\nmkdir .vnc\r\ncd .\/.vnc\r\ncurl -o xstartup https:\/\/raw.githubusercontent.com\/regulad\/stingray\/master\/stingray\/debian-chrome\/xstartup\r\nchmod +x xstartup",
+            "script": "#!\/bin\/ash\r\n# Stingray Installation Script\r\n#\r\n# Server Files: \/mnt\/server\r\nPROJECT=stingray\r\n\r\ncd \/mnt\/server\r\ncurl -o stingray.py https:\/\/raw.githubusercontent.com\/regulad\/stingray\/master\/stingray.py\r\nchmod +x stingray.py\r\n\r\nmkdir .vnc\r\ncd .\/.vnc\r\ncurl -o xstartup https:\/\/raw.githubusercontent.com\/regulad\/stingray\/master\/stingray\/debian-chrome\/xstartup\r\nchmod +x xstartup",
             "container": "ghcr.io\/pterodactyl\/installers:alpine",
             "entrypoint": "ash"
         }
