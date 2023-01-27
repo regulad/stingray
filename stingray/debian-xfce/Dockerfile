@@ -16,6 +16,7 @@ RUN         apt update && apt upgrade -y \
     			liblua5.3 libz-dev rapidjson-dev \
 				tigervnc-standalone-server tigervnc-common \
 				xfce4 xfce4-goodies \
+				firefox-esr libreoffice \
 				&& update-locale lang=en_US.UTF-8 \
 				&& dpkg-reconfigure --frontend noninteractive locales \
 				&& useradd -m -d /home/container -s /bin/bash -u 988 container
